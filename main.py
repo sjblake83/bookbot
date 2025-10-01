@@ -1,7 +1,12 @@
 from stats import get_word_count, get_character_counts
+from sys import argv, exit
 
 def main():
-    book_path = "books/frankenstein.txt"
+    if len(argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        exit(1)
+    
+    book_path = argv[1] # "books/frankenstein.txt"
     book_contents = get_book_text(book_path)
  
     print("============ BOOKBOT ============")
